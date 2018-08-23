@@ -1,0 +1,15 @@
+provider:
+  name: faas
+  gateway: http://127.0.0.1:8080
+
+functions:
+  gitlab-status:
+    lang: go
+    handler: ./gitlab-status
+    image: martindekov/gitlab-status:latest
+    #environment_file:
+      #- gateway_config.yml
+      #- github.yml
+    #secrets:
+      #- gitlab-auth-token
+
